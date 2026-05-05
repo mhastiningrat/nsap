@@ -4,7 +4,7 @@ pipeline {
 		nodejs 'NodeJs'
 	}
 	environment {
-		DOCKER_HUB_REPO = 'hastinxv/nestjs-api'
+		DOCKER_HUB_REPO = 'hastinxv/karder-api'
 		DOCKER_HUB_CREDENTIALS_ID = 'gitops-dockerhub'
 	}
 	stages {
