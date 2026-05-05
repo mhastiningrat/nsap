@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
   app.useGlobalInterceptors(new LoggingInterceptor());
-  const port = configService.get<number>('PORT') || 3000;
+  const port = configService.get<number>('PORT') || 3033;
   await app.listen(port);
   const logger = app.get<WinstonLogger>(WINSTON_MODULE_PROVIDER);
 
