@@ -1,12 +1,12 @@
 pipeline {
 	agent any
-	// tools {
-	// 	nodejs 'NodeJS'
-	// }
-	// environment {
-	// 	DOCKER_HUB_REPO = 'hastinxv/nestjs-api'
-	// 	DOCKER_HUB_CREDENTIALS_ID = 'gitops-dockerhub'
-	// }
+	tools {
+		nodejs 'NodeJS'
+	}
+	environment {
+		DOCKER_HUB_REPO = 'hastinxv/nestjs-api'
+		DOCKER_HUB_CREDENTIALS_ID = 'gitops-dockerhub'
+	}
 	stages {
 		stage('Checkout Github'){
 			steps {
@@ -59,7 +59,7 @@ pipeline {
 				script {
 					kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://192.168.49.2:8443') {
     						sh '''
-						argocd login 44.211.76.138:31559 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
+						argocd login 192.168.49.2:31060 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
 						argocd app sync argocdjenkins
 						'''
 					}	
