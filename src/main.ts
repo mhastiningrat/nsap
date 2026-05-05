@@ -13,6 +13,6 @@ async function bootstrap() {
   await app.listen(port);
   const logger = app.get<WinstonLogger>(WINSTON_MODULE_PROVIDER);
 
-  logger.info(`🚀 Services running on port : ${port}`);
+  logger.info(`🚀 Services running on test port : ${port}`);
 }
 bootstrap();
