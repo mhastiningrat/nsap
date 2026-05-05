@@ -1,12 +1,12 @@
 pipeline {
 	agent any
-	tools {
-		nodejs 'NodeJS'
-	}
-	environment {
-		DOCKER_HUB_REPO = 'hastinxv/nestjs-api'
-		DOCKER_HUB_CREDENTIALS_ID = 'gitops-dockerhub'
-	}
+	// tools {
+	// 	nodejs 'NodeJS'
+	// }
+	// environment {
+	// 	DOCKER_HUB_REPO = 'hastinxv/nestjs-api'
+	// 	DOCKER_HUB_CREDENTIALS_ID = 'gitops-dockerhub'
+	// }
 	stages {
 		stage('Checkout Github'){
 			steps {
