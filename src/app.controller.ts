@@ -10,3 +10,16 @@ export class AppController {
     return this.appService.getHello();
   }
 }
+
+import { HealthCheck, HealthCheckService } from '@nestjs/terminus';
+
+@Controller('health')
+export class HealthController {
+  constructor(private health: HealthCheckService) {}
+
+  @Get()
+  @HealthCheck()
+  check() {
+    return this.health.check([]);
+  }
+}

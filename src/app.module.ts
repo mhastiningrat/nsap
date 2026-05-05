@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import * as winston from 'winston';
+import { HealthModule } from './health/health.module';
 
 @Module({
   imports: [
@@ -34,6 +35,8 @@ import * as winston from 'winston';
         }),
       ],
     }),
+
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
