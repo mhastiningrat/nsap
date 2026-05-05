@@ -10,7 +10,7 @@ pipeline {
 	stages {
 		stage('Checkout Github'){
 			steps {
-			git branch: 'main', credentialsId: '', url: 'https://github.com/mhastiningrat/nsap.git'
+			git branch: 'main', credentialsId: 'kardel-token', url: 'https://github.com/mhastiningrat/nsap.git'
 			}
 		}		
 		stage('Install node dependencies'){
