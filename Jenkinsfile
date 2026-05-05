@@ -59,7 +59,7 @@ pipeline {
 				script {
 					kubeconfig(credentialsId: 'kubeconfig', serverUrl: 'https://192.168.49.2:8443') {
     						sh '''
-						argocd login 192.168.49.2:31485 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure --grpc-web --skip-test-tls
+						argocd login 192.168.49.2:31485 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
 						argocd app sync argocdjenkins
 						'''
 					}	
