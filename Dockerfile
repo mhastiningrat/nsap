@@ -19,6 +19,7 @@ RUN npm install --omit=dev
 
 COPY --from=builder /app/dist ./dist
 
+ENV PORT=3033
 EXPOSE 3033
 
 CMD ["node", "dist/src/main.js"]
